@@ -12,5 +12,37 @@
 	<packaging>war</packaging>
 	<name>Dealer Dashboard Web app</name>
 	<description>Data extractor for Edmunds Trip Tracking App</description>
+
+    <properties>
+        <inventory-rest-client.version>1.7.2</inventory-rest-client.version>
+        <spring.version>4.2.1.RELEASE</spring.version>
+        <google-maps-services.version>0.1.7</google-maps-services.version>
+    </properties>
+
+	<dependencies>
+        <!-- Edmunds dependencies -->
+		<dependency>
+			<groupId>com.edmunds.rest.service.client</groupId>
+			<artifactId>inventory-rest-client</artifactId>
+			<version>${inventory-rest-client.version}</version>
+		</dependency>
+
+        <!-- Other dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.maps</groupId>
+            <artifactId>google-maps-services</artifactId>
+            <version>${google-maps-services.version}</version>
+        </dependency>
+	</dependencies>
 	
 </project>

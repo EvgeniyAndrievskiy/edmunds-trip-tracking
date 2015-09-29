@@ -25,8 +25,19 @@ function initMap() {
 	  });
 }
 
+function isEmpty(str) {
+    return (!str || 0 === str.length);
+}
+
 function refreshDealerInventoryTable(dealerZipCode) {
 	$('#' + dealerInventoryTableID + ' td:nth-child(1)').wrap(function() {
-		return '<td><div class="imageContainer"><img src="' + $(this).text() + '"/></div></td>'
+		var currentText = $(this).text();
+		var result;
+		if (isEmpty(currentText)) {
+			result = '<td><td>';
+		} else {
+			result = '<td><div class="imageContainer"><img src="' + currentText + '"/></div></td>';
+		}
+		return result;
 		});
 }

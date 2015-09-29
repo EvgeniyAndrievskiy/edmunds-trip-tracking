@@ -16,6 +16,7 @@
     <properties>
         <inventory-rest-client.version>1.7.2</inventory-rest-client.version>
         <spring.version>4.2.1.RELEASE</spring.version>
+        <google-maps-services.version>0.1.7</google-maps-services.version>
     </properties>
 
 	<dependencies>
@@ -31,6 +32,11 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.maps</groupId>
+            <artifactId>google-maps-services</artifactId>
+            <version>${google-maps-services.version}</version>
         </dependency>
 	</dependencies>
 	

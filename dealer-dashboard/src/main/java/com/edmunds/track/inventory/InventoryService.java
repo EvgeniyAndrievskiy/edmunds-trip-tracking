@@ -15,8 +15,8 @@ public class InventoryService {
     @Autowired
     private InventoryV2RestClient inventoryRestClient;
 
-    public InventoriesDto getInventoriesByLocation(int zipCode) {
-        return inventoryRestClient.getInventoriesByLocation(new LocationParam(zipCode));
+    public InventoriesDto getInventoriesByLocation(String dealerId) {
+        return inventoryRestClient.getInventoriesByDealerId(dealerId);
     }
 
 }

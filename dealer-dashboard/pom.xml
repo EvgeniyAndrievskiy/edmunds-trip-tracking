@@ -14,9 +14,11 @@
 	<description>Data extractor for Edmunds Trip Tracking App</description>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <inventory-rest-client.version>1.7.2</inventory-rest-client.version>
         <spring.version>4.2.1.RELEASE</spring.version>
         <google-maps-services.version>0.1.7</google-maps-services.version>
+        <jackson.version>2.4.3</jackson.version>
     </properties>
 
 	<dependencies>
@@ -49,6 +51,21 @@
             <version>${google-maps-services.version}</version>
         </dependency>
 	</dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 	
 	<build>
 		<plugins>

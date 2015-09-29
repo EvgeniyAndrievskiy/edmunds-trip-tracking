@@ -1,0 +1,145 @@
+<html>
+	<head>
+		<title>Trip Tracker</title>
+		<link href="resources/css/bootstrap-theme.css" rel="stylesheet"/>
+		<link href="resources/css/bootstrap.css" rel="stylesheet">
+		<link href="resources/css/styles.css" rel="stylesheet">
+		<link href="resources/css/bootstrap-table.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="container" class="container">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="row" id="tripsTableContainer">
+						<h1>Trips</h1>
+						<table data-toggle="table">
+						    <thead>
+						        <tr>
+						        	<th data-checkbox="true">Status</th>
+						            <th>User ID</th>
+						            <th>Trip ID</th>
+						            <th>Trip Date</th>
+						        </tr>
+						    </thead>
+						    <tbody>
+						        <tr>
+						        	<td></td>
+						            <td>1</td>
+						            <td>1</td>
+						            <td>2015-09-29</td>
+						        </tr>
+						        <tr>
+						        	<td></td>
+						            <td>1</td>
+						            <td>2</td>
+						            <td>2015-09-29</td>
+						        </tr>
+						    </tbody>
+						</table>
+					</div>
+					<div class="row" id="tripMapContainer">
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="row" id="dealerInfoContainer">
+						<div class="input-group">
+					    	<input type="text" class="form-control" placeholder="Enter ZIP code...">
+					      	<span class="input-group-btn">
+					        	<button class="btn btn-default glyphicon glyphicon-refresh" type="button"></button>
+					      </span>
+					    </div>
+						<h1 id="dealerName">Dealer Name LA</h1>
+					</div>
+					<div class="row" id="dealerInventoryContainer">
+						<table data-toggle="table">
+						    <thead>
+						        <tr>
+						            <th>Image</th>
+						            <th>Vin</th>
+						            <th data-sortable="true">Rating</th>
+						        </tr>
+						    </thead>
+						    <tbody>
+						        <tr>
+						        	<td></td>
+						            <td>v122vv1233</td>
+						            <td>4,7</td>
+						        </tr>
+						        <tr>
+						        	<td></td>
+						            <td>v122vv1212</td>
+						            <td>3,5</td>
+						        </tr>
+						        <tr>
+						        	<td></td>
+						            <td>v122vv1233</td>
+						            <td>4,6</td>
+						        </tr>
+						        <tr>
+						        	<td></td>
+						            <td>v122vv1212</td>
+						            <td>3,6</td>
+						        </tr>
+						        <tr>
+						        	<td></td>
+						            <td>v122vv1233</td>
+						            <td>4,4</td>
+						        </tr>
+						        <tr>
+						        	<td></td>
+						            <td>v122vv1212</td>
+						            <td>3,4</td>
+						        </tr>
+						        <tr>
+						        	<td></td>
+						            <td>v122vv1233</td>
+						            <td>4,3</td>
+						        </tr>
+						        <tr>
+						        	<td></td>
+						            <td>v122vv1212</td>
+						            <td>3,3</td>
+						        </tr>
+						        <tr>
+						        	<td></td>
+						            <td>v122vv1233</td>
+						            <td>4,2</td>
+						        </tr>
+						        <tr>
+						        	<td></td>
+						            <td>v122vv1212</td>
+						            <td>3,2</td>
+						        </tr>
+						        <tr>
+						        	<td></td>
+						            <td>v122vv1233</td>
+						            <td>4,7</td>
+						        </tr>
+						        <tr>
+						        	<td></td>
+						            <td>v122vv1212</td>
+						            <td>3,5</td>
+						        </tr>
+						        <tr>
+						        	<td></td>
+						            <td>v122vv1233</td>
+						            <td>5,0</td>
+						        </tr>
+						        <tr>
+						        	<td></td>
+						            <td>v122vv1212</td>
+						            <td>3,5</td>
+						        </tr>
+						    </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="resources/scripts/scripts.js"></script>
+		<script src="resources/scripts/bootstrap.js"></script>
+		<script src="resources/scripts/jquery-2.1.4.js"></script>
+		<script src="resources/scripts/bootstrap-table.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0RHXYGEXZFQHFmLZA8ROnWAJtk1vi6jw&callback=initMap" async defer></script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+
+#container {
+	background: red;
+	height: 100%;
+}
+
+#tripsTableContainer {
+	height: 30%;
+	background: yellow;
+}
+
+#tripMapContainer {
+	height: 70%;
+	background: blue;
+}
+
+#dealerInfoContainer {
+	height: 200px;
+	background: green;
+}
+
+#tripMapContainer {
+	background: brown;
+}

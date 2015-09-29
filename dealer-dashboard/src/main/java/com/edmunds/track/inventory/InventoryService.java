@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by Administrator on 9/29/2015.
  */
-@Service
+//@Service
 public class InventoryService {
 
     @Autowired

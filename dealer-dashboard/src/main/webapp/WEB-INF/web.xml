@@ -7,6 +7,17 @@
 
     <display-name>Edmunds Trip Tracking Application</display-name>
 
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>dealer-dashboard.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+
     <servlet>
         <servlet-name>mvc-dispatcher</servlet-name>
         <servlet-class>

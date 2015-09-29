@@ -31,6 +31,18 @@
 	margin-right: 10px;
 }
 
+#dealerInventoryContainer tbody tr{
+	height: 100px;
+}
+
+.imageContainer {
+	width:120px;
+	height:80px;
+}
+.imageContainer img {
+    width: 100%;
+    height: auto;
+}
 /* Overriding default bootstrap styles */
 
 .btn, .form-control {

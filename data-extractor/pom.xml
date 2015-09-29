@@ -8,9 +8,8 @@
 		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 	
-	<artifactId>dealer-dashboard</artifactId>
-	<packaging>war</packaging>
-	<name>Dealer Dashboard Web app</name>
+	<artifactId>data-extractor</artifactId>
+	<name>Data extractor</name>
 	<description>Data extractor for Edmunds Trip Tracking App</description>
 	
 </project>

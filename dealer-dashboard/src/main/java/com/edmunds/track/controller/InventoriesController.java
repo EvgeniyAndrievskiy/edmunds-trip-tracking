@@ -6,7 +6,9 @@ import com.edmunds.rest.dto.inventory.InventoryDto;
 import com.edmunds.track.inventory.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,12 +17,13 @@ import java.util.List;
  * Created by Administrator on 9/29/2015.
  */
 @Controller
+@RequestMapping("/inventories")
 public class InventoriesController {
 
     @Autowired
     private InventoryService inventoryService;
 
-    @RequestMapping("/inventories")
+    @RequestMapping(method= RequestMethod.GET)
     public InventoriesResponse getInventories(String dealerId, long pathId) {
         InventoriesDto inventoriesDto = inventoryService.getInventoriesByLocation(dealerId);
         List<Inventory> inventories = new ArrayList<Inventory>();

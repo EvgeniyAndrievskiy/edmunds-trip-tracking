@@ -56,7 +56,7 @@ function loadTrack2() {
 	$.get("api/track?userId=" + userId + "&tripId=" + tripId, function(data) {
 		polyline2 = L.polyline(data.points, {color: 'blue'});
 		polyline2.addTo(map);
-		map.setView([34.0522342, -118.2436849], 12);
+		map.setView([34.1022342, -118.4436849], 11);
 	});
 }
 

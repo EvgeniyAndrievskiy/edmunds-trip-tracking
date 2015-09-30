@@ -19,7 +19,7 @@ import java.util.*;
 //@Service
 public class InventoryService {
 
-    public static final int MAX_HORSE_POWER = 400;
+    public static final int MAX_HORSE_POWER = 600;
     public static final int MIN_HORSE_POWER = 60;
 
     public static final int MAX_RATING = 5;

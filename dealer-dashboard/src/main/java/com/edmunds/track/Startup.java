@@ -18,8 +18,8 @@ public class Startup implements ApplicationListener<ContextRefreshedEvent> {
     public void onApplicationEvent(ContextRefreshedEvent event) {
         try {
             List<Track> tracks = new ArrayList<>();
-            tracks.add(Track.create(1, 1, "/tracks/Kalifornien02-01-2014.gpx"));
-            tracks.add(Track.create(2, 2, "/tracks/Kalifornien02-01-2014.gpx"));
+            tracks.add(Track.create(1, 1, "/tracks/0308casaMunras.gpx"));
+            tracks.add(Track.create(1, 2, "/tracks/Kalifornien02-01-2014.gpx"));
             tracks.add(Track.create(3, 3, "/tracks/Kalifornien02-01-2014.gpx"));
             TracksHolder.setTracks(tracks);
         } catch (JAXBException e) {

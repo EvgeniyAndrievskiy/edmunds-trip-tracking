@@ -30,16 +30,33 @@ function initMap() {
 	});*/
 
 	map = L.map(tripMapContainerID);
-	map.setView([34.0522342, -118.2436849], 10);
+	map.setView([34.0522342, -118.2436849], 12);
 
 	var tileLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(map);
+}
 
+var polyline1;
+var polyline2;
+
+function loadTrack1() {
 	var userId = 1;
 	var tripId = 1;
 	$.get("api/track?userId=" + userId + "&tripId=" + tripId, function(data) {
-		L.polyline(data.points, {color: 'blue'}).addTo(map);
+		polyline1 = L.polyline(data.points, {color: 'blue'});
+		polyline1.addTo(map);
+		map.setView([34.0522342, -118.8436849], 12);
+	});
+}
+
+function loadTrack2() {
+	var userId = 1;
+	var tripId = 2;
+	$.get("api/track?userId=" + userId + "&tripId=" + tripId, function(data) {
+		polyline2 = L.polyline(data.points, {color: 'blue'});
+		polyline2.addTo(map);
+		map.setView([34.0522342, -118.2436849], 12);
 	});
 }
 
@@ -65,9 +82,22 @@ function refreshDealerInventoryTable(dealerID, pathID) {
 			result = '<td><div class="imageContainer"><img src="' + currentText + '"/></div></td>';
 		}
 		return result;
-		});
+	});
 }
 
 function getSelectedTripID() {
 	return ($('#' + tripsTableID).bootstrapTable('getSelections'))[0][2];
+}
+
+function clearMap() {
+    for(i in map._layers) {
+        if(map._layers[i]._path != undefined) {
+            try {
+                map.removeLayer(map._layers[i]);
+            }
+            catch(e) {
+                console.log("problem with " + e + map._layers[i]);
+            }
+        }
+    }
 }

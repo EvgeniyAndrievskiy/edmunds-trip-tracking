@@ -9,11 +9,7 @@
 		<link href="resources/leaflet/leaflet.css" rel="stylesheet"/>
 		<script src="resources/scripts/jquery-2.1.4.js"></script>
 		<script src="resources/leaflet/leaflet.js"></script>
-		<script>
-			$(function() {
-				initMap();
-			});
-		</script>
+
 	</head>
 	<body>
 		<div id="container" class="container">
@@ -153,10 +149,27 @@
 				</div>
 			</div>
 		</div>
-		<script src="resources/scripts/jquery-2.1.4.js"></script>
 		<script src="resources/scripts/bootstrap.js"></script>
 		<script src="resources/scripts/bootstrap-table.js"></script>
 		<script src="resources/scripts/scripts.js"></script>
+		<script>
+			$(function() {
+				initMap();
+				$('#tripsTable input').change(
+					function () {
+						if ($(this).prop('checked')) {
+							var id = getSelectedTripID();
+							if (id == 1) {
+								clearMap();
+								loadTrack1();
+							} else {
+								clearMap();
+								loadTrack2();
+							}
+						}
+					});
+			});
+		</script>
 		<!--<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyA0RHXYGEXZFQHFmLZA8ROnWAJtk1vi6jw&callback=initMap" async defer>-->
 	</body>
 </html>

@@ -8,6 +8,14 @@
 	</head>
 	<body>
 		<div id="container" class="container">
+			<div class="row" id="headerContainer">
+				<div class="col-xs-2" id="logoContainer">
+					
+				</div>
+				<div class="col-xs-10" id="dashboardNameContainer">
+					
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-xs-6">
 					<div class="row" id="tripsTableContainer">
@@ -45,18 +53,18 @@
 						<div class="input-group">
 					    	<input type="text" id ="dealerIDInput" class="form-control" placeholder="Enter dealer id...">
 					      	<span class="input-group-btn">
-					        	<button onclick="refreshDealerInventoryTable($('#' + dealerIDInputID).val())" class="btn btn-default glyphicon glyphicon-refresh" type="button"></button>
+					        	 <button onclick="reloadDealerInventoryTable($('#' + dealerIDInputID).val())" class="btn btn-default glyphicon glyphicon-refresh" type="button"></button>
 					      </span>
 					    </div>
-						<h1 id="dealerName">Dealer Name LA</h1>
+						<h1 id="dealerNameHeader">Dealer Name LA</h1>
 					</div>
 					<div class="row" id="dealerInventoryContainer">
 						<table data-toggle="table" id="dealerInventoryTable">
 						    <thead>
 						        <tr>
-						            <th>Image</th>
-						            <th>Vin</th>
-						            <th data-sortable="true">Rating</th>
+						            <th data-field="previewUrl" >Image</th>
+						            <th data-field="vin" >Vin</th>
+						            <th data-field="rating" data-sortable="true">Rating</th>
 						        </tr>
 						    </thead>
 						    <tbody>

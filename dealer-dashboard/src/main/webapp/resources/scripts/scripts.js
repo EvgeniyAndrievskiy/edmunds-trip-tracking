@@ -2,9 +2,13 @@ var tripMapContainerID = 'tripMapContainer';
 
 var dealerIDInputID = 'dealerIDInput';
 
+var dealerNameHeaderID = 'dealerNameHeader';
+
 var dealerInventoryTableID = 'dealerInventoryTable';
 
-var DEFAULT_DEALER_ID = 90404;
+var DEFAULT_DEALER_ID = 893;
+
+var DEFAULT_PATH_ID = 1;
 
 $(function() {
     init();
@@ -12,7 +16,7 @@ $(function() {
 
 function init(){
 	$('#' + dealerIDInputID).val(DEFAULT_DEALER_ID); 
-    refreshDealerInventoryTable(DEFAULT_DEALER_ID);
+    reloadDealerInventoryTable(DEFAULT_DEALER_ID, DEFAULT_PATH_ID);
     $('#' + dealerInventoryTableID).bootstrapTable().on('post-body.bs.table', function (e, name, args) {
     	refreshDealerInventoryTable($('#' + dealerIDInputID).val());
     });
@@ -29,7 +33,15 @@ function isEmpty(str) {
     return (!str || 0 === str.length);
 }
 
-function refreshDealerInventoryTable(dealerZipCode) {
+function reloadDealerInventoryTable(dealerID, pathID) {
+	$.get( "api/inventories?dealerId=" + dealerID + "&pathId=" + 0, function( data ) {
+		  $('#' + dealerInventoryTableID).bootstrapTable('load', data.inventories);
+		  $('#' + dealerNameHeaderID).html(data.dealerName);
+		});
+	refreshDealerInventoryTable(dealerID, pathID);
+}
+
+function refreshDealerInventoryTable(dealerID, pathID) {
 	$('#' + dealerInventoryTableID + ' td:nth-child(1)').wrap(function() {
 		var currentText = $(this).text();
 		var result;

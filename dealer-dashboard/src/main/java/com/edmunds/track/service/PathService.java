@@ -16,8 +16,8 @@ public class PathService {
 
     private static Map<Integer, Map<RoadType, Double>> generatePathsMap()  {
         Map<Integer, Map<RoadType, Double>> pathsMap = new HashMap<>();
-        pathsMap.put(1, getPathMap(10, 20, 70));
-        pathsMap.put(2, getPathMap(80, 5, 15));
+        pathsMap.put(1, getPathMap(100, 0, 0));
+        pathsMap.put(2, getPathMap(0, 0, 100));
         pathsMap.put(3, getPathMap(50, 10, 40));
         return pathsMap;
     }

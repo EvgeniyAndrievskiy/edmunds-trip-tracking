@@ -1,5 +1,7 @@
 package com.edmunds.track.controller;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by Administrator on 9/29/2015.
  */
@@ -9,12 +11,14 @@ public class Inventory {
 
     private String vin;
 
-    private Double rating;
+    private String rating;
+
+    private static DecimalFormat decimalFormat = new DecimalFormat("#.#");
 
     public Inventory(String previewUrl, String vin, Double rating) {
         this.previewUrl = previewUrl;
         this.vin = vin;
-        this.rating = rating;
+        this.rating = decimalFormat.format(rating);;
     }
 
     public Inventory(String previewUrl, String vin) {
@@ -30,11 +34,8 @@ public class Inventory {
         return vin;
     }
 
-    public Double getRating() {
+    public String getRating() {
         return rating;
     }
 
-    public void setRating(Double rating) {
-        this.rating = rating;
-    }
 }

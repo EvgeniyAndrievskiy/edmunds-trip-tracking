@@ -10,6 +10,7 @@
 
     <context:component-scan base-package="com.edmunds.track.service"/>
     <import resource="classpath:inventory-rest-client-spring.xml"/>
+    <import resource="classpath:vehicle-service-client-spring.xml"/>
     <import resource="classpath:data-extractor.xml"/>
 
     <bean id="inventoryService" class="com.edmunds.track.inventory.InventoryService" />

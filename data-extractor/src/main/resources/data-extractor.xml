@@ -18,4 +18,6 @@
         <property name="apiKey" value="${googleApi.apiKey}" />
     </bean>
 
+    <bean id="speedLimitsAnalyzer" class="com.edmunds.track.speed.SpeedLimitsAnalyzer" />
+
 </beans>

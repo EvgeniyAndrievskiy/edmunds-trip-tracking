@@ -48,7 +48,7 @@ public class Track {
             System.out.println("WARNING: number of tracks are greater then 1");
         }
         for (TrkType trkType : gpxType.getTrk()) {
-            System.out.println("Loading of track:" + trkType.getName());
+            System.out.println("Loading of track: " + trkType.getName());
             track = new Track(
                     userId, tripId,
                     trkType.getName(),

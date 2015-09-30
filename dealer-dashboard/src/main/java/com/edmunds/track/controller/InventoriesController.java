@@ -4,6 +4,7 @@ import com.edmunds.rest.dto.common.LinkDto;
 import com.edmunds.rest.dto.inventory.InventoriesDto;
 import com.edmunds.rest.dto.inventory.InventoryDto;
 import com.edmunds.track.inventory.InventoryService;
+import com.edmunds.track.service.PathService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +24,8 @@ public class InventoriesController {
 
     @Autowired
     private InventoryService inventoryService;
+    @Autowired
+    private PathService pathService;
 
     @ResponseBody
     @RequestMapping(method= RequestMethod.GET, produces = "application/json")
@@ -36,10 +39,13 @@ public class InventoriesController {
             if(inventoryDto.getMedia() != null) {
                 previewHref = inventoryDto.getMedia().getPhotos().getThumbnails().getLinks().iterator().next().getHref();
             }
-            Inventory inventory = new Inventory(previewHref, inventoryDto.getVin(), 0);
+            Inventory inventory = new Inventory(previewHref, inventoryDto.getVin());
             inventories.add(inventory);
         }
+
         return new InventoriesResponse(inventoriesDto.getInventories().get(0).getDealer().getName(), inventories);
     }
+
+
 
 }

@@ -8,6 +8,18 @@
 	<packaging>pom</packaging>
 	<name>Edmunds Trip Tracking App</name>
 	<description>Prototype for Edmunds trip tracking App</description>
+
+	<properties>
+		<spring.version>4.2.1.RELEASE</spring.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+	</dependencies>
 	
 	<modules>
 		<module>data-extractor</module>

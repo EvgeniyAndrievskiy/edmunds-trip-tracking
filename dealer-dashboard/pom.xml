@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.edmunds.tracking</groupId>
 		<artifactId>trip-tracking</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>${trip-tracking.version}</version>
 	</parent>
 	
 	<artifactId>dealer-dashboard</artifactId>
@@ -14,9 +14,9 @@
 	<description>Data extractor for Edmunds Trip Tracking App</description>
 
     <properties>
+        <trip-tracking.version>1.0.1-SNAPSHOT</trip-tracking.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <inventory-rest-client.version>1.7.2</inventory-rest-client.version>
-        <spring.version>4.2.1.RELEASE</spring.version>
         <jackson.version>2.4.3</jackson.version>
     </properties>
 
@@ -27,16 +27,16 @@
 			<artifactId>inventory-rest-client</artifactId>
 			<version>${inventory-rest-client.version}</version>
 		</dependency>
+        <dependency>
+            <groupId>com.edmunds.tracking</groupId>
+            <artifactId>data-extractor</artifactId>
+            <version>${trip-tracking.version}</version>
+        </dependency>
 
         <!-- Other dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
             <version>${spring.version}</version>
         </dependency>
         <dependency>

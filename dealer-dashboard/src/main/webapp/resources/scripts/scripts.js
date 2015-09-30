@@ -10,13 +10,14 @@ var DEFAULT_DEALER_ID = 893;
 
 var DEFAULT_PATH_ID = 1;
 
+var tripsTableID = 'tripsTable';
+
 $(function() {
     init();
 });
 
 function init(){
-	$('#' + dealerIDInputID).val(DEFAULT_DEALER_ID); 
-    reloadDealerInventoryTable(DEFAULT_DEALER_ID, DEFAULT_PATH_ID);
+	refreshDealerInventoryTable($('#' + dealerIDInputID).val());
     $('#' + dealerInventoryTableID).bootstrapTable().on('post-body.bs.table', function (e, name, args) {
     	refreshDealerInventoryTable($('#' + dealerIDInputID).val());
     });
@@ -34,7 +35,7 @@ function isEmpty(str) {
 }
 
 function reloadDealerInventoryTable(dealerID, pathID) {
-	$.get( "api/inventories?dealerId=" + dealerID + "&pathId=" + 0, function( data ) {
+	$.get( "api/inventories?dealerId=" + dealerID + "&pathId=" + pathID, function( data ) {
 		  $('#' + dealerInventoryTableID).bootstrapTable('load', data.inventories);
 		  $('#' + dealerNameHeaderID).html(data.dealerName);
 		});
@@ -52,4 +53,8 @@ function refreshDealerInventoryTable(dealerID, pathID) {
 		}
 		return result;
 		});
+}
+
+function getSelectedTripID() {
+	return ($('#' + tripsTableID).bootstrapTable('getSelections'))[0][2];
 }

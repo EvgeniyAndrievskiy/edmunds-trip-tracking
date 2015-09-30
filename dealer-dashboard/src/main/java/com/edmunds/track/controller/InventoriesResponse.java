@@ -1,5 +1,6 @@
 package com.edmunds.track.controller;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 /**
@@ -11,11 +12,14 @@ public class InventoriesResponse {
 
     private List<Inventory> inventories;
 
+    private String averageSpeed;
+
     public InventoriesResponse() {}
 
-    public InventoriesResponse(String dealerName, List<Inventory> inventories) {
+    public InventoriesResponse(String dealerName, List<Inventory> inventories, Double averageSpeed) {
         this.dealerName = dealerName;
         this.inventories = inventories;
+        this.averageSpeed = Inventory.decimalFormat.format(averageSpeed);
     }
 
     public String getDealerName() {
@@ -24,5 +28,9 @@ public class InventoriesResponse {
 
     public List<Inventory> getInventories() {
         return inventories;
+    }
+
+    public String getAverageSpeed() {
+        return averageSpeed;
     }
 }

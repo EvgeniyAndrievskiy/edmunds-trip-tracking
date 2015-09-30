@@ -2,7 +2,9 @@ package com.edmunds.track.controller;
 
 import com.edmunds.rest.dto.inventory.InventoriesDto;
 import com.edmunds.rest.dto.inventory.InventoryDto;
+import com.edmunds.track.criteria.RoadType;
 import com.edmunds.track.inventory.InventoryService;
+import com.edmunds.track.service.PathService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,7 +40,10 @@ public class InventoriesController {
             inventories.add(inventory);
         }
 
-        return new InventoriesResponse(inventoriesDto.getInventories().get(0).getDealer().getName(), inventories);
+        return new InventoriesResponse(inventoriesDto.getInventories().get(0).getDealer().getName(), inventories,
+                inventoryService.getAverageSpeed(pathId));
     }
+
+
 
 }

@@ -24,10 +24,23 @@ function init(){
 }
 
 function initMap() {
-	  map = new google.maps.Map(document.getElementById(tripMapContainerID), {
-	    center: {lat: -34.397, lng: 150.644},
-	    zoom: 8
-	  });
+	/*map = new google.maps.Map(document.getElementById(tripMapContainerID), {
+		center: {lat: -34.397, lng: 150.644},
+		zoom: 8
+	});*/
+
+	map = L.map(tripMapContainerID);
+	map.setView([34.0522342, -118.2436849], 10);
+
+	var tileLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+
+	var userId = 1;
+	var tripId = 1;
+	$.get("api/track?userId=" + userId + "&tripId=" + tripId, function(data) {
+		L.polyline(data.points, {color: 'blue'}).addTo(map);
+	});
 }
 
 function isEmpty(str) {

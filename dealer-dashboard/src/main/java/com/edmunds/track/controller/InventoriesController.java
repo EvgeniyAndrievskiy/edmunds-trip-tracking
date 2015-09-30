@@ -1,20 +1,17 @@
 package com.edmunds.track.controller;
 
-import com.edmunds.rest.dto.common.LinkDto;
 import com.edmunds.rest.dto.inventory.InventoriesDto;
 import com.edmunds.rest.dto.inventory.InventoryDto;
-import com.edmunds.track.criteria.RoadType;
 import com.edmunds.track.inventory.InventoryService;
-import com.edmunds.track.service.PathService;
-import com.edmunds.track.speed.SpeedLimitsAnalyzer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 9/29/2015.

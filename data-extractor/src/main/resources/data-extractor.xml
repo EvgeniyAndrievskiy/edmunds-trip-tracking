@@ -8,19 +8,14 @@
                     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
                     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-    <!--<context:component-scan base-package="com.edmunds.track.inventory"/>-->
-    <import resource="classpath:inventory-rest-client-spring.xml"/>
-    <import resource="classpath:data-extractor.xml"/>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>classpath:tracking.properties</value>
+        </property>
+    </bean>
 
-    <bean id="inventoryService" class="com.edmunds.track.inventory.InventoryService" />
-
-    <bean id="inventoriesController" class="com.edmunds.track.controller.InventoriesController" />
-
-    <mvc:annotation-driven>
-        <mvc:message-converters>
-            <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
-            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
-        </mvc:message-converters>
-    </mvc:annotation-driven>
+    <bean id="speedLimitsService" class="com.edmunds.track.speed.GoogleSpeedLimitsService">
+        <property name="apiKey" value="${googleApi.apiKey}" />
+    </bean>
 
 </beans>

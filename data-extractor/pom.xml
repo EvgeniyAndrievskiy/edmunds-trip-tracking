@@ -12,25 +12,35 @@
 	<name>Data extractor</name>
 	<description>Data extractor for Edmunds Trip Tracking App</description>
 
+	<properties>
+		<google-maps-services.version>0.1.7</google-maps-services.version>
+		<testng.version>6.9.6</testng.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-math3</artifactId>
-			<version>3.5</version>
+			<groupId>com.google.maps</groupId>
+			<artifactId>google-maps-services</artifactId>
+			<version>${google-maps-services.version}</version>
 		</dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.3.1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.3.1</version>
-		</dependency>
-
+		<!-- Test dependencies -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
 			<scope>test</scope>
-			<version>6.9.6</version>
 		</dependency>
 	</dependencies>
-	
+
 </project>

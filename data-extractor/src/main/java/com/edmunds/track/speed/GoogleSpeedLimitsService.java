@@ -10,11 +10,11 @@ import java.util.Collection;
 /**
  * Created by Administrator on 9/29/2015.
  */
-public class SpeedLimitsService {
+public class GoogleSpeedLimitsService {
 
     private GeoApiContext geoApiContext;
 
-    public SpeedLimitsService() {
+    public GoogleSpeedLimitsService() {
         geoApiContext = new GeoApiContext();
     }
 

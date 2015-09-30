@@ -82,4 +82,12 @@ public class InventoryService {
         return (horsePower - MIN_HORSE_POWER) / (MAX_HORSE_POWER - MIN_HORSE_POWER);
     }
 
+    public double getAverageSpeed(int pathId) {
+        Map<RoadType, Double> pathMap = pathService.getRoadTypesWithPcts(pathId);
+        double averageSpeedLimit = SpeedLimitsAnalyzer.FREEWAY_RURAL_MAX * pathMap.get(RoadType.HIGHWAY_RURAL) / 100 +
+                SpeedLimitsAnalyzer.FREEWAY_URBAN_MAX * pathMap.get(RoadType.HIGHWAY_URBAN) / 100
+                + SpeedLimitsAnalyzer.RESIDENTIAL_MAX * pathMap.get(RoadType.RESIDENTIAL) / 100;
+        return averageSpeedLimit;
+    }
+
 }

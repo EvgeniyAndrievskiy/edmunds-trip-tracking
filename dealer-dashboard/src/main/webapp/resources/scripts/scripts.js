@@ -51,6 +51,7 @@ function reloadDealerInventoryTable(dealerID, pathID) {
 	$.get( "api/inventories?dealerId=" + dealerID + "&pathId=" + pathID, function( data ) {
 		  $('#' + dealerInventoryTableID).bootstrapTable('load', data.inventories);
 		  $('#' + dealerNameHeaderID).html(data.dealerName);
+		  $('#speed-limit').text(data.averageSpeed);
 		});
 	refreshDealerInventoryTable(dealerID, pathID);
 }

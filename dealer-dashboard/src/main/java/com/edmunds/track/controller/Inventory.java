@@ -13,7 +13,7 @@ public class Inventory {
 
     private String rating;
 
-    private static DecimalFormat decimalFormat = new DecimalFormat("#.#");
+    public static DecimalFormat decimalFormat = new DecimalFormat("#.#");
 
     public Inventory(String previewUrl, String vin, Double rating) {
         this.previewUrl = previewUrl;

@@ -69,7 +69,8 @@ public class InventoryService {
     private void fillEngineHorsePowerMap(List<InventoryDto> inventories) {
         for(InventoryDto inventoryDto : inventories) {
             if(!engineHorsePowerMap.containsKey(inventoryDto.getStyle().getId())) {
-                StyleDto styleDto = styleRestClient.findStyleById(inventoryDto.getStyle().getId(), RequestView.basic());
+                StyleDto styleDto = styleRestClient.findStyleById(inventoryDto.getStyle().getId(), RequestView.custom()
+                        .add("engine").add("horsepower").buildIncludingFields());
                 engineHorsePowerMap.put(inventoryDto.getStyle().getId(), styleDto.getEngine().getHorsepower());
             }
         }

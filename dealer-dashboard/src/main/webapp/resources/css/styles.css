@@ -1,10 +1,39 @@
 
-#container {
+/* 	
+
+	ORANGE : #d96a34
+	LIGHT BROWN : #f7f7f7
+	WHITE : #ffffff
+
+ */
+
+body {
+	background: #f7f7f7;
 	height: 100%;
+}
+
+#container {
+	height: 900px;
+	background-color: #ffffff;
+}
+
+#logoContainer {
+	height:100px;
+	background-image: url(../../resources/images/logoWhiteSmall.png);
 }
 
 .row {
 	margin-top: 20px;
+}
+
+#headerContainer {
+	background-color: #d96a34;
+	height: 100px;
+	margin-top: 0px;
+}
+
+.zero-top-margin {
+	margin-top: 0px;
 }
 
 #tripsTableContainer, #dealerInfoContainer {
@@ -43,6 +72,11 @@
     width: 100%;
     height: auto;
 }
+
+.imageContainer {
+	margin-left:55px;
+}
+
 /* Overriding default bootstrap styles */
 
 .btn, .form-control {

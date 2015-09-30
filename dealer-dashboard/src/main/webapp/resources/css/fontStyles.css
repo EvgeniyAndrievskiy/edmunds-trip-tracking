@@ -1,24 +1,52 @@
+/* 	
 
-#container {
-	background: red;
-	height: 100%;
+	ORANGE : #d96a34
+	LIGHT BROWN : #f7f7f7
+	DARK BROWN: #63483b
+	WHITE : #ffffff
+
+ */
+
+body {
+	font-family: 'trebuchet ms';
 }
 
-#tripsTableContainer {
-	height: 30%;
-	background: yellow;
+ 
+ #dashboardNameContainer h1{
+margin-bottom:10px ;
+  color: #ffffff;
+  font-family: 'trebuchet ms';
+  font-size: 50px;
+  text-align: left;
+  word-spacing: 5px;
+  text-transform: uppercase;
 }
 
-#tripMapContainer {
-	height: 70%;
-	background: blue;
+ h1{
+  color: #63483b;
+  font-family: 'trebuchet ms';
+  font-size: 30px;
+  text-align: left;
+  word-spacing: 5px;
+  text-transform: uppercase;
 }
 
-#dealerInfoContainer {
-	height: 200px;
-	background: green;
+#dealerInventoryTable  tbody tr td:nth-child(3) {
+    text-align:center;
+    vertical-align: middle;
+    font-size: 30px;
 }
 
-#tripMapContainer {
-	background: brown;
+table thead {
+	text-transform: uppercase;
+	
+}
+
+table thead th div {
+	text-align: center;
+}
+
+.fixed-table-container tbody tr td {
+    text-align:center;
+    vertical-align: middle;
 }
